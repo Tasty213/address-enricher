@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import ValidationWarning from "./ValidationWarning";
+import ValidatePostcodeResponse from "./postcodesIoTypes";
 
 function PostcodeInput() {
   const [postcode, setPostcode] = useState("SW1P 2PN");
@@ -26,7 +27,23 @@ function validate_postcode(
   setPostcode: React.Dispatch<React.SetStateAction<string>>
 ) {
   setPostcode(postcode);
-  setIsValid(postcode.length > 3);
+
+  fetch(`https://api.postcodes.io/postcodes/${postcode}/validate`)
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        throw new Error(
+          "Failed to call postcode validator API, falling back to local method"
+        );
+      }
+    })
+    .then((data: ValidatePostcodeResponse) => setIsValid(data.result))
+    .catch((error) => setIsValid(validate_postcode_locally(postcode)));
+}
+
+function validate_postcode_locally(postcode: string) {
+  return postcode.length > 3;
 }
 
 export default PostcodeInput;
