@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/address-enricher/static/css/main.073c9b0a.css",
+    "main.js": "/address-enricher/static/js/main.5c3311a0.js",
+    "static/js/787.45328e65.chunk.js": "/address-enricher/static/js/787.45328e65.chunk.js",
+    "static/media/logo.svg": "/address-enricher/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/address-enricher/index.html",
+    "main.073c9b0a.css.map": "/address-enricher/static/css/main.073c9b0a.css.map",
+    "main.5c3311a0.js.map": "/address-enricher/static/js/main.5c3311a0.js.map",
+    "787.45328e65.chunk.js.map": "/address-enricher/static/js/787.45328e65.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.5c3311a0.js"
+  ]
+}
